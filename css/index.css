@@ -54,7 +54,7 @@ html {
 
 #title {
     font-size: 40px;
-    background-image: linear-gradient(to left, #00ff00 0%, #00ff00 100%);
+    background-image: linear-gradient(to left, #04d9c5 0%, #04d9c5 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -189,6 +189,10 @@ li {
     border-bottom: 2px solid rgba(255, 255, 255, 1);
 }
 
+#contact #email {
+    font-size: 18px;
+}
+
 ::placeholder {
     color: #fff;
 }
@@ -262,7 +266,7 @@ li {
 .btn_social {
     font-size: 18px;
     color: #fff;
-    margin: 40px 20px;
+    margin: 0px 0px;
     padding: 15px 18px;
     border-radius: 50%;
     background: #000;
