@@ -124,7 +124,12 @@ header h1 {
 
 .paper-plane4 {
 	position: absolute;
-	height: 100px;
-	top: 50%;
-	left: 80%;
+	width: 8%;
+	top: 0%;
+	left: 0%;
+}
+@media all and (max-width: 550px) {
+	.paper-plane4 {
+		width: 20%;
+	}
 }

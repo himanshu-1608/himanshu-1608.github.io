@@ -196,17 +196,47 @@ const flightPath3 = {
 	],
 };
 
+// const flightPath4 = {
+// 	curviness: 1.25,
+// 	autoRotate: true,
+// 	values: [
+// 		{ x: 30, y: -20 },
+// 		{ x: -300, y: 10 },
+// 		{ x: -500, y: 100 },
+// 		{ x: -750, y: -100 },
+// 		{ x: -100, y: 100 },
+// 		{ x: -700, y: 0 },
+// 		{ x: -10, y: 10 },
+// 	],
+// };
+// const flightPath4 = {
+// 	curviness: 1.25,
+// 	autoRotate: true,
+// 	values: [
+// 		{ x: 85, y: 163 },
+// 		{ x: 229, y: 186 },
+// 		{ x: 328, y: 341 },
+// 		{ x: 536, y: 506 },
+// 		{ x: 700, y: 457 },
+// 		{ x: 813, y: 309 },
+// 		{ x: 720, y: 244 },
+// 	],
+// };
+const screenHeightPercent = window.innerHeight / 100;
+const screenWidthPercent = window.innerWidth / 100;
+
 const flightPath4 = {
-	curviness: 1.25,
+	curviness: 1,
 	autoRotate: true,
 	values: [
-		{ x: 30, y: -20 },
-		{ x: -300, y: 10 },
-		{ x: -500, y: 100 },
-		{ x: -750, y: -100 },
-		{ x: -100, y: 100 },
-		{ x: -700, y: 0 },
-		{ x: -10, y: 10 },
+		// { x: 35 * screenWidthPercent, y: 5 * screenHeightPercent },
+		{ x: 70 * screenWidthPercent, y: 20 * screenHeightPercent },
+		{ x: 229, y: 186 },
+		{ x: 328, y: 341 },
+		{ x: 536, y: 506 },
+		{ x: 700, y: 457 },
+		{ x: 813, y: 309 },
+		{ x: 720, y: 244 },
 	],
 };
 
