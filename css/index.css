@@ -2,7 +2,138 @@
 	margin: 0;
 	padding: 0;
 	box-sizing: border-box;
+	color: yellow;
 }
-html {
+html,
+body {
+	width: 100%;
+	height: 100vh;
+	overflow: hidden;
+	background-color: #000022;
+	font-size: 16px;
+	font-family: 'Montserrat', sans-serif;
 	scroll-behavior: smooth;
+	scrollbar-width: none;
+}
+
+::-webkit-scrollbar {
+	width: 0px;
+}
+
+#loading-page {
+	width: 100%;
+	height: 100vh;
+	background-color: black;
+	position: fixed;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	z-index: 100;
+}
+#loading-circle {
+	width: 70px;
+	height: 70px;
+	border-radius: 100%;
+	animation: windowload 1s linear 0s infinite alternate forwards;
+}
+
+header {
+	/* border: 1px solid red; */
+	padding-right: 10px;
+}
+#intro {
+	width: 100%;
+	height: 100vh;
+	/* border: 1px solid green; */
+	text-align: end;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: flex-end;
+}
+#intro > h1 {
+	font-size: 3rem;
+	z-index: 0;
+}
+#intro > h2 {
+	font-size: 0.8rem;
+}
+#samurai-img {
+	/* border: 1px solid lightyellow; */
+	position: absolute;
+	height: 100vh;
+	top: 0%;
+	z-index: 2;
+	left: -60vw;
+}
+#paperplane-img {
+	z-index: 1;
+	/* border: 1px solid lightblue; */
+	position: absolute;
+	width: 10vw;
+	top: 100vh;
+	left: -10vw;
+}
+
+/* Different Media Queries will be clustered here */
+@media (max-width: 950px) {
+	header {
+		padding-right: 5px;
+	}
+	#samurai-img {
+		display: none;
+	}
+	#paperplane-img {
+		width: 20vw;
+		left: -5vw;
+	}
+}
+
+/* KeyFrames will be defined below: */
+
+/* Animation wrapper-classes */
+.introscale {
+	animation: introscale 0.5s ease-in-out 0s 1 normal forwards;
+}
+.samuraiemergeleft {
+	animation: samuraiemergeleft 0.5s ease 0s 1 normal forwards;
+}
+/* Actual Keyframes */
+
+@keyframes windowload {
+	0% {
+		border: 8px solid darkred;
+		opacity: 1;
+		scale: 2;
+	}
+	50% {
+		border: 8px solid darkgreen;
+		opacity: 1;
+		scale: 1.5;
+	}
+	100% {
+		border: 8px solid darkblue;
+		opacity: 1;
+		scale: 1;
+	}
+}
+
+@keyframes samuraiemergeleft {
+	0% {
+		transform: translateX(0vw);
+	}
+	100% {
+		transform: translateX(50vw);
+	}
+}
+
+@keyframes introscale {
+	0% {
+		transform: translateY(-20%);
+		scale: 0;
+	}
+	100% {
+		transform: translateY(0%);
+		scale: 1;
+	}
 }
