@@ -107,6 +107,28 @@ header h1 {
 	height: 100px;
 	top: 50%;
 	left: 80%;
+	animation: an1 4s ease-in-out 0s 1 alternate both;
+}
+
+@keyframes an1 {
+	0% {
+		transform: translateX(50vw) translateY(-70vh);
+	}
+	20% {
+		transform: translateX(-30vw) translateY(-10vh);
+	}
+	40% {
+		transform: translateX(60vw) translateY(50vh);
+	}
+	60% {
+		transform: translateX(-10vw) translateY(-30vh);
+	}
+	80% {
+		transform: translateX(-70vw) translateY(60vh);
+	}
+	100% {
+		transform: translateX(0%) translateY(0%);
+	}
 }
 
 .animation2 {

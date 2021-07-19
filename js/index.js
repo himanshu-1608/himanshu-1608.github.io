@@ -1,5 +1,8 @@
 // let personList = document.querySelectorAll('.person');
-
+window.onload = (event) => {
+	let loader = document.getElementById('loader');
+	loader.style.display = 'none';
+};
 // let faceList = Array.from(personList).map((person) => {
 // 	return person.querySelector('.face');
 // });
@@ -176,8 +179,8 @@ const scene = new ScrollMagic.Scene({
 	duration: 6000,
 	triggerHook: '0',
 })
-	.setTween(tween)
-	.addIndicators()
+	// .setTween(tween)
+	// .addIndicators()
 	.setPin('.animation')
 	.addTo(controller);
 
