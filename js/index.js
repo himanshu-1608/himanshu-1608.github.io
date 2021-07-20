@@ -1,7 +1,7 @@
 const heightPercent = window.innerHeight / 100;
 const widthPercent = window.innerWidth / 100;
 
-const isPhone = () => window.innerWidth < 500;
+const isPhone = () => window.innerWidth < 850;
 
 const flightPathDesktop = {
 	curviness: 0.5,
@@ -32,6 +32,25 @@ const flightPathMobile = {
 	],
 };
 
+const samuraiScrollPath = {
+	curviness: 1,
+	autoRotate: false,
+	values: [{ x: -400 }],
+};
+
+const planeScrollPath = {
+	curviness: 0,
+	autoRotate: false,
+	values: [
+		{
+			x: 150 * widthPercent,
+			y: -40 * heightPercent,
+			scaleX: 0,
+			scaleY: 0,
+		},
+	],
+};
+
 const addIntroAnimations = () => {
 	// remove loader
 	let loadingPage = document.getElementById('loading-page');
@@ -41,22 +60,63 @@ const addIntroAnimations = () => {
 
 	// Intro Animation
 	let introElem = document.getElementById('intro');
-	introElem.classList.add('introscale');
+	introElem.classList.add('animate-intro');
 
 	// Techsamurai animation
-	let imgSamurai = document.getElementById('samurai-img');
-	imgSamurai.classList.add('samuraiemergeleft');
-
+	let imgSamurai = document.getElementById('img-samurai-animate');
+	imgSamurai.classList.add('animate-samurai');
+	setTimeout(() => {
+		if (!isPhone()) {
+			let imgSamuraiAnimate = document.getElementById('img-samurai-animate');
+			imgSamuraiAnimate.parentElement.removeChild(imgSamuraiAnimate);
+			let imgSamuraiScroll = document.getElementById('img-samurai-scroll');
+			imgSamuraiScroll.style.display = 'block';
+		}
+	}, 2000);
 	// PaperPlane Animation
 	isPhone()
-		? TweenLite.to('#paperplane-img', 2, {
+		? TweenLite.to('#img-plane-animate', 2, {
 				bezier: flightPathMobile,
 				ease: Power1.easeOut,
 		  })
-		: TweenLite.to('#paperplane-img', 2, {
+		: TweenLite.to('#img-plane-animate', 2, {
 				bezier: flightPathDesktop,
 				ease: Power1.easeOut,
 		  });
+	setTimeout(() => {
+		let imgPlaneAnimate = document.getElementById('img-plane-animate');
+		let imgPlaneScroll = document.getElementById('img-plane-scroll');
+
+		imgPlaneScroll.style.transform = imgPlaneAnimate.style.transform;
+		imgPlaneAnimate.parentElement.removeChild(imgPlaneAnimate);
+		imgPlaneScroll.style.display = 'block';
+	}, 2000);
+
+	const tweenTimeLine = new TimelineLite();
+
+	tweenTimeLine.add(
+		TweenLite.to('.img-samurai-scroll', 2, {
+			bezier: samuraiScrollPath,
+			ease: Power1.easeOut,
+		})
+	);
+	tweenTimeLine.add(
+		TweenLite.to('.img-plane-scroll', 1, {
+			bezier: planeScrollPath,
+			ease: Power1.easeIn,
+		}),
+		0
+	);
+	const controller = new ScrollMagic.Controller();
+
+	const scene = new ScrollMagic.Scene({
+		triggerElement: 'header',
+		duration: 1000,
+		triggerHook: '0',
+	})
+		.setTween(tweenTimeLine)
+		.addIndicators()
+		.addTo(controller);
 };
 
 // addIntroAnimations();
