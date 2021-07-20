@@ -4,21 +4,17 @@ const widthPercent = window.innerWidth / 100;
 const isPhone = () => window.innerWidth < 500;
 
 const flightPathDesktop = {
-	curviness: 0.2,
+	curviness: 0.5,
 	autoRotate: true,
 	values: [
-		{ x: 0 * widthPercent, y: 0 * heightPercent, scaleX: 5, scaleY: 5 },
-		{ x: 70 * widthPercent, y: -65 * heightPercent, scaleX: 5, scaleY: 4.5 },
-		{ x: 140 * widthPercent, y: -130 * heightPercent, scaleX: 4, scaleY: 4 },
-		{ x: 50 * widthPercent, y: -140 * heightPercent, scaleX: 3, scaleY: 3 },
-		{ x: 60 * widthPercent, y: 20 * heightPercent, scaleX: 3, scaleY: 3 },
-		{ x: 80 * widthPercent, y: 50 * heightPercent, scaleX: 2, scaleY: 2 },
-		{ x: 140 * widthPercent, y: 40 * heightPercent, scaleX: 1.5, scaleY: 1.5 },
-		{ x: 90 * widthPercent, y: -90 * heightPercent, scaleX: 1.5, scaleY: 1.5 },
-		{ x: 10 * widthPercent, y: -90 * heightPercent, scaleX: 1.5, scaleY: 1.5 },
-		{ x: 10 * widthPercent, y: -60 * heightPercent, scaleX: 1.5, scaleY: 1.5 },
-		{ x: 25 * widthPercent, y: -30 * heightPercent, scaleX: 1.5, scaleY: 1 },
-		{ x: 70 * widthPercent, y: -50 * heightPercent, scaleX: 1, scaleY: 1 },
+		{ x: 0 * widthPercent, y: 0 * heightPercent, scaleX: 4, scaleY: 4 },
+		{ x: 80 * widthPercent, y: -30 * heightPercent, scaleX: 3.5, scaleY: 3.5 },
+		{ x: 90 * widthPercent, y: -70 * heightPercent, scaleX: 3, scaleY: 3 },
+		{ x: 40 * widthPercent, y: -70 * heightPercent, scaleX: 2.5, scaleY: 2.5 },
+		{ x: 40 * widthPercent, y: -40 * heightPercent, scaleX: 2, scaleY: 2 },
+		{ x: 55 * widthPercent, y: -30 * heightPercent, scaleX: 1.5, scaleY: 1.5 },
+		{ x: 70 * widthPercent, y: -40 * heightPercent, scaleX: 1.2, scaleY: 1.2 },
+		{ x: 80 * widthPercent, y: -47 * heightPercent, scaleX: 1, scaleY: 1 },
 	],
 };
 
@@ -26,19 +22,13 @@ const flightPathMobile = {
 	curviness: 0.5,
 	autoRotate: true,
 	values: [
-		{ x: 0 * widthPercent, y: 0 * heightPercent, scaleX: 5, scaleY: 5 },
-		{ x: 70 * widthPercent, y: -65 * heightPercent, scaleX: 5, scaleY: 4.5 },
-		{ x: 140 * widthPercent, y: -130 * heightPercent, scaleX: 4, scaleY: 4 },
-		{ x: 50 * widthPercent, y: -140 * heightPercent, scaleX: 3, scaleY: 3 },
-		{ x: 60 * widthPercent, y: 20 * heightPercent, scaleX: 3, scaleY: 3 },
-		{ x: 80 * widthPercent, y: 50 * heightPercent, scaleX: 2, scaleY: 2 },
-		{ x: 140 * widthPercent, y: 40 * heightPercent, scaleX: 1.5, scaleY: 1.5 },
-		{ x: 90 * widthPercent, y: -90 * heightPercent, scaleX: 1.5, scaleY: 1.5 },
-		{ x: 10 * widthPercent, y: -90 * heightPercent, scaleX: 1.5, scaleY: 1.5 },
-		{ x: -10 * widthPercent, y: -60 * heightPercent, scaleX: 1.5, scaleY: 1.5 },
-		{ x: 0 * widthPercent, y: -30 * heightPercent, scaleX: 1.5, scaleY: 1.5 },
-		{ x: 25 * widthPercent, y: -30 * heightPercent, scaleX: 1.5, scaleY: 1 },
-		{ x: 70 * widthPercent, y: -38 * heightPercent, scaleX: 1, scaleY: 1 },
+		{ x: 0 * widthPercent, y: 0 * heightPercent, scaleX: 4, scaleY: 4 },
+		{ x: 80 * widthPercent, y: -30 * heightPercent, scaleX: 3.5, scaleY: 3.5 },
+		{ x: 90 * widthPercent, y: -70 * heightPercent, scaleX: 3, scaleY: 3 },
+		{ x: 40 * widthPercent, y: -80 * heightPercent, scaleX: 2.5, scaleY: 2.5 },
+		{ x: 10 * widthPercent, y: -70 * heightPercent, scaleX: 2.5, scaleY: 2.5 },
+		{ x: 20 * widthPercent, y: -40 * heightPercent, scaleX: 2, scaleY: 2 },
+		{ x: 70 * widthPercent, y: -40 * heightPercent, scaleX: 1.2, scaleY: 1.2 },
 	],
 };
 
@@ -68,6 +58,8 @@ const addIntroAnimations = () => {
 				ease: Power1.easeOut,
 		  });
 };
+
+// addIntroAnimations();
 
 // window.onload clustered here
 window.onload = (event) => {
