@@ -27,8 +27,8 @@ const flightPathMobile = {
 		{ x: 90 * widthPercent, y: -70 * heightPercent, scaleX: 3, scaleY: 3 },
 		{ x: 40 * widthPercent, y: -80 * heightPercent, scaleX: 2.5, scaleY: 2.5 },
 		{ x: 10 * widthPercent, y: -70 * heightPercent, scaleX: 2.5, scaleY: 2.5 },
-		{ x: 20 * widthPercent, y: -40 * heightPercent, scaleX: 2, scaleY: 2 },
-		{ x: 70 * widthPercent, y: -40 * heightPercent, scaleX: 1.2, scaleY: 1.2 },
+		{ x: 20 * widthPercent, y: -30 * heightPercent, scaleX: 2, scaleY: 2 },
+		{ x: 70 * widthPercent, y: -30 * heightPercent, scaleX: 1.2, scaleY: 1.2 },
 	],
 };
 
@@ -119,12 +119,70 @@ const addIntroAnimations = () => {
 		.addTo(controller);
 };
 
-// addIntroAnimations();
+addIntroAnimations();
 
-// window.onload clustered here
-window.onload = (event) => {
-	// after 1 sec
-	setTimeout(() => {
-		addIntroAnimations();
-	}, 1000);
+// // window.onload clustered here
+// window.onload = (event) => {
+// 	// after 1 sec
+// 	setTimeout(() => {
+// 		// addIntroAnimations();
+// 	}, 1000);
+// };
+
+const amplifyScrollPathDesktop = {
+	curviness: 1.5,
+	autoRotate: false,
+	values: [
+		{ x: 0 * widthPercent, y: 15 * heightPercent },
+		{ x: 35 * widthPercent, y: 10 * heightPercent },
+		{ x: 55 * widthPercent, y: 50 * heightPercent },
+		{ x: 35 * widthPercent, y: 90 * heightPercent },
+		{ x: 15 * widthPercent, y: 50 * heightPercent },
+		{ x: 35 * widthPercent, y: 10 * heightPercent },
+	],
 };
+
+const amplifyScrollPathMobile = {
+	curviness: 1.5,
+	autoRotate: false,
+	values: [
+		{ x: 0 * widthPercent, y: 30 * heightPercent },
+		{ x: 20 * widthPercent, y: 40 * heightPercent },
+		{ x: 40 * widthPercent, y: 60 * heightPercent },
+		{ x: 20 * widthPercent, y: 80 * heightPercent },
+		{ x: 0 * widthPercent, y: 90 * heightPercent },
+	],
+};
+
+const tweenTimeLineFrontend = new TimelineLite();
+isPhone()
+	? tweenTimeLineFrontend.add(
+			TweenLite.to('#cover-amplify', 1, {
+				bezier: amplifyScrollPathMobile,
+				ease: Power1.easeOut,
+			})
+	  )
+	: tweenTimeLineFrontend.add(
+			TweenLite.to('#cover-amplify', 1, {
+				bezier: amplifyScrollPathDesktop,
+				ease: Power1.easeOut,
+			})
+	  );
+// tweenTimeLine.add(
+// 	TweenLite.to('.img-plane-scroll', 1, {
+// 		bezier: planeScrollPath,
+// 		ease: Power1.easeIn,
+// 	}),
+// 	0
+// );
+const controllerFrontend = new ScrollMagic.Controller();
+
+const scene = new ScrollMagic.Scene({
+	triggerElement: '.frontend',
+	duration: 1000,
+	triggerHook: '0',
+})
+	.setTween(tweenTimeLineFrontend)
+	.addIndicators()
+	.setPin('.frontend')
+	.addTo(controllerFrontend);

@@ -90,6 +90,47 @@ header {
 	font-size: 1rem;
 }
 
+#intro h2 {
+	margin-top: 17px;
+}
+
+#intro .links {
+	text-decoration: none;
+	color: powderblue;
+}
+
+.frontend {
+	position: relative;
+	background-image: linear-gradient(darkblue, rgb(20, 19, 49));
+	height: 100vh;
+	overflow: hidden;
+}
+
+#cover-amplify {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: -10vh;
+	left: -10vw;
+	background-color: darkslateblue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 100%;
+}
+#cover-amplify img {
+	margin-top: -10px;
+	/* background-color: purple; */
+	width: 80px;
+	height: 80px;
+}
+
+#cover-amplify p {
+	font-size: 0.8rem;
+}
+
 footer {
 	height: 100vh;
 	display: flex;
@@ -112,6 +153,22 @@ footer {
 	#img-plane-scroll {
 		width: 20vw;
 		left: -5vw;
+	}
+	#cover-amplify {
+		width: 50px;
+		height: 50px;
+		top: -15vh;
+		left: -15vw;
+		/* background-color: green; */
+	}
+	#cover-amplify img {
+		margin-top: -8px;
+		width: 28px;
+		height: 28px;
+	}
+
+	#cover-amplify p {
+		font-size: 0.45rem;
 	}
 }
 
