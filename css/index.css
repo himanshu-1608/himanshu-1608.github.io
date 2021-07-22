@@ -101,7 +101,7 @@ header {
 
 .frontend {
 	position: relative;
-	background-image: linear-gradient(darkblue, rgb(20, 19, 49));
+	background-image: linear-gradient(blue, #000033);
 	height: 100vh;
 	overflow: hidden;
 }
@@ -128,6 +128,184 @@ header {
 }
 
 #cover-amplify p {
+	font-size: 0.8rem;
+}
+
+#cover-react {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: -20vh;
+	left: 60vw;
+	background-color: darkslateblue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 100%;
+}
+#cover-react img {
+	margin-top: -10px;
+	width: 100px;
+	height: 100px;
+}
+
+#cover-react p {
+	margin-top: -10px;
+	font-size: 0.8rem;
+}
+
+#cover-firebase-auth {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 100vh;
+	left: 50vw;
+	background-color: darkslateblue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 100%;
+}
+#cover-firebase-auth img {
+	/* margin-top: -10px; */
+	width: 80px;
+	height: 80px;
+}
+
+#cover-firebase-auth p {
+	/* margin-top: -10px; */
+	font-size: 0.8rem;
+}
+
+#cover-firebase-cloud-fns {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 100vh;
+	left: 10vw;
+	background-color: darkslateblue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 100%;
+}
+#cover-firebase-cloud-fns img {
+	/* margin-top: -10px; */
+	width: 80px;
+	height: 80px;
+}
+
+#cover-firebase-cloud-fns p {
+	/* margin-top: -10px; */
+	font-size: 0.8rem;
+}
+
+#cover-aws-cognito {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 100vh;
+	left: 80vw;
+	background-color: darkslateblue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 100%;
+}
+#cover-aws-cognito img {
+	/* margin-top: -10px; */
+	width: 80px;
+	height: 80px;
+}
+
+#cover-aws-cognito p {
+	/* margin-top: -10px; */
+	font-size: 0.8rem;
+}
+
+#cover-serverless {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: -20vh;
+	left: 10vw;
+	background-color: darkslateblue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 100%;
+}
+#cover-serverless img {
+	/* margin-top: -10px; */
+	width: 70px;
+	height: 70px;
+}
+
+#cover-serverless p {
+	/* margin-top: -10px; */
+	font-size: 0.8rem;
+}
+
+#cover-npm-package {
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 30vh;
+	left: -10vw;
+	background-color: darkslateblue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 100%;
+}
+#cover-npm-package img {
+	margin-top: -5px;
+	width: 70px;
+	height: 30px;
+	/* background-color: plum; */
+}
+
+#cover-npm-package p {
+	/* margin-top: -10px; */
+	font-size: 0.8rem;
+}
+
+#cover-php {
+	text-align: center;
+	width: 120px;
+	height: 120px;
+	position: absolute;
+	top: 50vh;
+	left: -10vw;
+	background-color: darkslateblue;
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	align-items: center;
+	text-align: center;
+	border-radius: 100%;
+}
+#cover-php img {
+	/* margin-top: -5px; */
+	width: 80px;
+	height: 50px;
+	/* background-color: plum; */
+}
+
+#cover-php p {
+	/* margin-top: -10px; */
 	font-size: 0.8rem;
 }
 

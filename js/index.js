@@ -129,52 +129,184 @@ addIntroAnimations();
 // 	}, 1000);
 // };
 
+// const amplifyScrollPathMobile = {
+// 	curviness: 1.5,
+// 	autoRotate: false,
+// 	values: [
+// 		{ x: 0 * widthPercent, y: 30 * heightPercent },
+// 		{ x: 20 * widthPercent, y: 40 * heightPercent },
+// 		{ x: 40 * widthPercent, y: 60 * heightPercent },
+// 		{ x: 20 * widthPercent, y: 80 * heightPercent },
+// 		{ x: 0 * widthPercent, y: 90 * heightPercent },
+// 	],
+// };
+
 const amplifyScrollPathDesktop = {
 	curviness: 1.5,
 	autoRotate: false,
 	values: [
 		{ x: 0 * widthPercent, y: 15 * heightPercent },
-		{ x: 35 * widthPercent, y: 10 * heightPercent },
-		{ x: 55 * widthPercent, y: 50 * heightPercent },
-		{ x: 35 * widthPercent, y: 90 * heightPercent },
-		{ x: 15 * widthPercent, y: 50 * heightPercent },
-		{ x: 35 * widthPercent, y: 10 * heightPercent },
+		{ x: 35 * widthPercent, y: 13 * heightPercent },
+		{ x: 55 * widthPercent, y: 53 * heightPercent },
+		{ x: 35 * widthPercent, y: 93 * heightPercent },
 	],
 };
 
-const amplifyScrollPathMobile = {
+const reactScrollPathDesktop = {
 	curviness: 1.5,
 	autoRotate: false,
 	values: [
-		{ x: 0 * widthPercent, y: 30 * heightPercent },
-		{ x: 20 * widthPercent, y: 40 * heightPercent },
-		{ x: 40 * widthPercent, y: 60 * heightPercent },
-		{ x: 20 * widthPercent, y: 80 * heightPercent },
-		{ x: 0 * widthPercent, y: 90 * heightPercent },
+		{ x: 0 * widthPercent, y: -5 * heightPercent },
+		{ x: -10 * widthPercent, y: 43 * heightPercent },
+		{ x: -15 * widthPercent, y: 63 * heightPercent },
+		{ x: -35 * widthPercent, y: 103 * heightPercent },
+		{ x: -55 * widthPercent, y: 63 * heightPercent },
+	],
+};
+
+const firebaseAuthScrollPathDesktop = {
+	curviness: 1.5,
+	autoRotate: false,
+	values: [
+		{ x: 0 * widthPercent, y: 5 * heightPercent },
+		{ x: -25 * widthPercent, y: -17 * heightPercent },
+		{ x: -45 * widthPercent, y: -57 * heightPercent },
+		{ x: -25 * widthPercent, y: -97 * heightPercent },
+	],
+};
+
+const firebaseCloudFnsScrollPathDesktop = {
+	curviness: 1.5,
+	autoRotate: false,
+	values: [
+		{ x: -5 * widthPercent, y: 0 * heightPercent },
+		{ x: 0 * widthPercent, y: 0 * heightPercent },
+		{ x: 0 * widthPercent, y: -17 * heightPercent },
+		{ x: -5 * widthPercent, y: -57 * heightPercent },
+		{ x: 15 * widthPercent, y: -97 * heightPercent },
+		{ x: 28 * widthPercent, y: -81 * heightPercent },
+	],
+};
+
+const awsCognitoScrollPathDesktop = {
+	curviness: 1.5,
+	autoRotate: false,
+	values: [
+		{ x: -55 * widthPercent, y: -17 * heightPercent },
+		{ x: -75 * widthPercent, y: -57 * heightPercent },
+		{ x: -68 * widthPercent, y: -81 * heightPercent },
+	],
+};
+
+const serverlessScrollPathDesktop = {
+	curviness: 1.5,
+	autoRotate: false,
+	values: [
+		{ x: -4 * widthPercent, y: 0 * heightPercent },
+		{ x: 15 * widthPercent, y: 23 * heightPercent },
+		{ x: 35 * widthPercent, y: 63 * heightPercent },
+		{ x: 15 * widthPercent, y: 103 * heightPercent },
+		{ x: 2 * widthPercent, y: 87 * heightPercent },
+	],
+};
+
+const npmPackageScrollPathDesktop = {
+	curviness: 1.5,
+	autoRotate: false,
+	values: [
+		{ x: 0 * widthPercent, y: 20 * heightPercent },
+		{ x: 0 * widthPercent, y: 0 * heightPercent },
+		{ x: 35 * widthPercent, y: -27 * heightPercent },
+		{ x: 55 * widthPercent, y: 13 * heightPercent },
+		{ x: 48 * widthPercent, y: 37 * heightPercent },
+	],
+};
+
+const phpScrollPathDesktop = {
+	curviness: 1.5,
+	autoRotate: false,
+	values: [
+		{ x: 0 * widthPercent, y: -18 * heightPercent },
+		{ x: 0 * widthPercent, y: 0 * heightPercent },
+		{ x: 15 * widthPercent, y: -20 * heightPercent },
+		{ x: 35 * widthPercent, y: -47 * heightPercent },
+		{ x: 55 * widthPercent, y: -7 * heightPercent },
 	],
 };
 
 const tweenTimeLineFrontend = new TimelineLite();
-isPhone()
-	? tweenTimeLineFrontend.add(
-			TweenLite.to('#cover-amplify', 1, {
-				bezier: amplifyScrollPathMobile,
-				ease: Power1.easeOut,
-			})
-	  )
-	: tweenTimeLineFrontend.add(
-			TweenLite.to('#cover-amplify', 1, {
-				bezier: amplifyScrollPathDesktop,
-				ease: Power1.easeOut,
-			})
-	  );
-// tweenTimeLine.add(
-// 	TweenLite.to('.img-plane-scroll', 1, {
-// 		bezier: planeScrollPath,
-// 		ease: Power1.easeIn,
-// 	}),
-// 	0
-// );
+
+// isPhone()
+// 	? tweenTimeLineFrontend.add(
+// 			TweenLite.to('#cover-amplify', 1, {
+// 				bezier: amplifyScrollPathMobile,
+// 				ease: Power0.easeNone,
+// 			})
+// 	  )
+
+tweenTimeLineFrontend.add(
+	TweenLite.to('#cover-amplify', 3, {
+		bezier: amplifyScrollPathDesktop,
+		ease: Power0.easeNone,
+	})
+);
+
+tweenTimeLineFrontend.add(
+	TweenLite.to('#cover-react', 3, {
+		bezier: reactScrollPathDesktop,
+		ease: Power0.easeNone,
+	}),
+	0
+);
+
+tweenTimeLineFrontend.add(
+	TweenLite.to('#cover-firebase-auth', 3, {
+		bezier: firebaseAuthScrollPathDesktop,
+		ease: Power0.easeNone,
+	}),
+	0
+);
+
+tweenTimeLineFrontend.add(
+	TweenLite.to('#cover-firebase-cloud-fns', 3, {
+		bezier: firebaseCloudFnsScrollPathDesktop,
+		ease: Power0.easeNone,
+	}),
+	0
+);
+
+tweenTimeLineFrontend.add(
+	TweenLite.to('#cover-aws-cognito', 3, {
+		bezier: awsCognitoScrollPathDesktop,
+		ease: Power0.easeNone,
+	}),
+	0
+);
+
+tweenTimeLineFrontend.add(
+	TweenLite.to('#cover-serverless', 3, {
+		bezier: serverlessScrollPathDesktop,
+		ease: Power0.easeNone,
+	}),
+	0
+);
+
+tweenTimeLineFrontend.add(
+	TweenLite.to('#cover-npm-package', 3, {
+		bezier: npmPackageScrollPathDesktop,
+		ease: Power0.easeNone,
+	}),
+	0
+);
+
+tweenTimeLineFrontend.add(
+	TweenLite.to('#cover-php', 3, {
+		bezier: phpScrollPathDesktop,
+		ease: Power0.easeNone,
+	}),
+	0
+);
+
 const controllerFrontend = new ScrollMagic.Controller();
 
 const scene = new ScrollMagic.Scene({
