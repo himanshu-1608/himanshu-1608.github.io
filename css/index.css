@@ -4,10 +4,16 @@
 	box-sizing: border-box;
 	color: yellow;
 }
+
+/* ::-webkit-scrollbar {
+	width: 0px;
+} */
+
 html {
 	font-size: 16px;
 	background-color: #000033;
 	font-family: 'Montserrat', sans-serif;
+	/* scrollbar-width: none; */
 }
 
 #loading-page {
@@ -309,6 +315,81 @@ header {
 	font-size: 0.8rem;
 }
 
+.backend {
+	position: relative;
+	background-image: linear-gradient(blue, #000033);
+	height: 100vh;
+	overflow: hidden;
+}
+
+#waves {
+	width: 100%;
+	z-index: 2;
+	position: absolute;
+	bottom: -5px;
+	left: 0;
+}
+
+.cover-boat {
+	/* border: 1px solid black; */
+	background-image: url('./../img/general/boat.png');
+	background-repeat: no-repeat;
+	background-size: contain;
+	z-index: 1;
+	position: absolute;
+	width: 30vw;
+	height: 53vh;
+	top: 20vh;
+	left: -30vw;
+	/*
+	rotate: 180deg;
+	transform: rotate(180deg);
+	-ms-transform: rotate(180deg);
+	-webkit-transform: rotate(180deg); /* Safari and Chrome */
+	/*-o-transform: rotate(180deg); /* Opera */
+	/*-moz-transform: rotate(180deg); /* Firefox */
+}
+
+.boat-content {
+	width: 17vw;
+	height: 30vh;
+	position: absolute;
+	top: 3vh;
+	right: 2vw;
+	/* border: 1px solid green; */
+	display: flex;
+	align-items: center;
+	flex-direction: column;
+}
+
+.boat-icons {
+	/* border: 1px solid pink; */
+	margin: 1.3vh 1vw 0px 0vw;
+	display: flex;
+	flex-wrap: wrap;
+	flex-direction: row;
+	justify-content: space-around;
+	align-items: flex-start;
+}
+
+.boat-icons > img {
+	width: 30%;
+}
+
+.boat-text {
+	margin-left: 1.5vw;
+}
+.boat-text > h2 {
+	text-align: center;
+}
+.boat-text > ul {
+	list-style-type: square;
+}
+
+.boat-text * {
+	color: darkblue;
+}
+
 footer {
 	height: 100vh;
 	display: flex;
@@ -400,5 +481,14 @@ footer {
 	100% {
 		transform: translateY(0%);
 		scale: 1;
+	}
+}
+
+@keyframes animate-wave {
+	0% {
+		transform: translateX(-20%);
+	}
+	100% {
+		transform: translateX(20%);
 	}
 }
