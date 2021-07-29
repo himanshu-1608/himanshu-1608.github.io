@@ -3,6 +3,20 @@ const widthPercent = window.innerWidth / 100;
 
 const isPhone = () => window.innerWidth < 850;
 
+const flightPathMobile = {
+	curviness: 0.5,
+	autoRotate: true,
+	values: [
+		{ x: 0 * widthPercent, y: 0 * heightPercent, scaleX: 4, scaleY: 4 },
+		{ x: 80 * widthPercent, y: -30 * heightPercent, scaleX: 3.5, scaleY: 3.5 },
+		{ x: 90 * widthPercent, y: -70 * heightPercent, scaleX: 3, scaleY: 3 },
+		{ x: 40 * widthPercent, y: -80 * heightPercent, scaleX: 2.5, scaleY: 2.5 },
+		{ x: 10 * widthPercent, y: -70 * heightPercent, scaleX: 2.5, scaleY: 2.5 },
+		{ x: 20 * widthPercent, y: -30 * heightPercent, scaleX: 2, scaleY: 2 },
+		{ x: 70 * widthPercent, y: -30 * heightPercent, scaleX: 1.2, scaleY: 1.2 },
+	],
+};
+
 const flightPathDesktop = {
 	curviness: 0.5,
 	autoRotate: true,
@@ -15,20 +29,6 @@ const flightPathDesktop = {
 		{ x: 55 * widthPercent, y: -30 * heightPercent, scaleX: 1.5, scaleY: 1.5 },
 		{ x: 70 * widthPercent, y: -40 * heightPercent, scaleX: 1.2, scaleY: 1.2 },
 		{ x: 80 * widthPercent, y: -47 * heightPercent, scaleX: 1, scaleY: 1 },
-	],
-};
-
-const flightPathMobile = {
-	curviness: 0.5,
-	autoRotate: true,
-	values: [
-		{ x: 0 * widthPercent, y: 0 * heightPercent, scaleX: 4, scaleY: 4 },
-		{ x: 80 * widthPercent, y: -30 * heightPercent, scaleX: 3.5, scaleY: 3.5 },
-		{ x: 90 * widthPercent, y: -70 * heightPercent, scaleX: 3, scaleY: 3 },
-		{ x: 40 * widthPercent, y: -80 * heightPercent, scaleX: 2.5, scaleY: 2.5 },
-		{ x: 10 * widthPercent, y: -70 * heightPercent, scaleX: 2.5, scaleY: 2.5 },
-		{ x: 20 * widthPercent, y: -30 * heightPercent, scaleX: 2, scaleY: 2 },
-		{ x: 70 * widthPercent, y: -30 * heightPercent, scaleX: 1.2, scaleY: 1.2 },
 	],
 };
 
@@ -115,31 +115,19 @@ const addIntroAnimations = () => {
 		triggerHook: '0',
 	})
 		.setTween(tweenTimeLine)
-		.addIndicators()
+		// .addIndicators()
 		.addTo(controller);
 };
 
-addIntroAnimations();
+// addIntroAnimations();
 
-// // window.onload clustered here
-// window.onload = (event) => {
-// 	// after 1 sec
-// 	setTimeout(() => {
-// 		// addIntroAnimations();
-// 	}, 1000);
-// };
-
-// const amplifyScrollPathMobile = {
-// 	curviness: 1.5,
-// 	autoRotate: false,
-// 	values: [
-// 		{ x: 0 * widthPercent, y: 30 * heightPercent },
-// 		{ x: 20 * widthPercent, y: 40 * heightPercent },
-// 		{ x: 40 * widthPercent, y: 60 * heightPercent },
-// 		{ x: 20 * widthPercent, y: 80 * heightPercent },
-// 		{ x: 0 * widthPercent, y: 90 * heightPercent },
-// 	],
-// };
+// window.onload clustered here
+window.onload = (event) => {
+	// after 1 sec
+	setTimeout(() => {
+		addIntroAnimations();
+	}, 1000);
+};
 
 const amplifyScrollPathDesktop = {
 	curviness: 1.5,
@@ -236,14 +224,6 @@ const phpScrollPathDesktop = {
 
 const tweenTimeLineFrontend = new TimelineLite();
 
-// isPhone()
-// 	? tweenTimeLineFrontend.add(
-// 			TweenLite.to('#cover-amplify', 1, {
-// 				bezier: amplifyScrollPathMobile,
-// 				ease: Power0.easeNone,
-// 			})
-// 	  )
-
 tweenTimeLineFrontend.add(
 	TweenLite.to('#cover-amplify', 3, {
 		bezier: amplifyScrollPathDesktop,
@@ -315,7 +295,7 @@ const sceneFrontend = new ScrollMagic.Scene({
 	triggerHook: '0',
 })
 	.setTween(tweenTimeLineFrontend)
-	.addIndicators()
+	// .addIndicators()
 	.setPin('.frontend')
 	.addTo(controllerFrontend);
 
@@ -383,6 +363,6 @@ const sceneBackend = new ScrollMagic.Scene({
 	triggerHook: '0',
 })
 	.setTween(tweenTimeLineBackend)
-	.addIndicators()
+	// .addIndicators()
 	.setPin('.backend')
 	.addTo(controllerBackend);
