@@ -1,0 +1,17 @@
+.devops {
+	position: relative;
+	background-color: rgb(54, 175, 216);
+	background-image: url('./../img/general/wave.png');
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-blend-mode: darken;
+	height: 100vh;
+	overflow: hidden;
+}
+
+#img-docker {
+	width: 50vw;
+	margin-left: 50vw;
+	margin-top: 10vh;
+	transform: translateX(-50%);
+}
