@@ -22,3 +22,22 @@ footer {
 	justify-content: center;
 	align-items: center;
 }
+
+.resize-dialog {
+	position: fixed;
+	width: 100%;
+	background-color: darkgoldenrod;
+	top: 0px;
+	height: 5vh;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	display: none;
+}
+.resize-dialog * {
+	margin: 10px;
+	color: black;
+}
+#reload-button {
+	padding: 5px;
+}
